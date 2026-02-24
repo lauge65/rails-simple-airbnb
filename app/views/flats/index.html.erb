@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>All our flats (<%= @flats.length %>)</h1>
+
+<div class="container mt-4">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body bg-light">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p class="card-text text-muted"><%= flat.address %></p>
+
+            <div class="d-flex gap-3 mt-3">
+              <span>
+                <i class="fa-solid fa-people-roof"></i>
+                <%= flat.number_of_guests %>
+              </span>
+              <span>
+                <i class="fa-solid fa-euro-sign"></i>
+                <%= flat.price_per_night %>
+              </span>
+            </div>
+          </div>
+
+          <div class="card-footer bg-white">
+            <%= link_to "More info", flat_path(flat), class: "text-decoration-none" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
