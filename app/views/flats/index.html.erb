@@ -23,8 +23,10 @@
             </div>
           </div>
 
-          <div class="card-footer bg-white">
+          <div class="card-footer bg-white d-flex gap-3">
             <%= link_to "More info", flat_path(flat), class: "text-decoration-none" %>
+            <%= link_to "edit", edit_flat_path(flat), class: "text-decoration-none text-warning" %>
+            <%= link_to "Delete", flat_path(flat), class: "text-decoration-none text-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
           </div>
         </div>
       </div>
